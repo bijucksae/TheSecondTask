@@ -29,6 +29,7 @@ run() {
     for(let subsytem of this.subsytems){
       subsytem.run();
     }
+  }
 
   applyGravity(g) {
     for(let p of this.particles){
@@ -38,7 +39,7 @@ run() {
       subsytem.applyGravity(g);
     }
   }
-}
+
   applyFriction(friction){
     for(let p of this.particles){
       p.applyFriction(f);
