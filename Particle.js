@@ -1,8 +1,7 @@
-// 파티클 클래스
 class Particle {
     constructor(position) {
       this.position = position.copy(); 
-      this.velocity = createVector(random(-1, 1), random(-1, 0)); // 초기 속도 (위쪽으로 약간의 속도)
+      this.velocity = createVector(random(-1, 1), random(-1, 0));
       this.acceleration = createVector(0, 0);
       this.lifespan = 255; 
       this.size = particleSize;
