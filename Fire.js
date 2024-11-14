@@ -18,7 +18,7 @@ applyGravity(gravity){
   }
 
   applyFriction(friction) {
-    this.velocity.add(friction);
+    this.velocity.mult(friction);
   }
 
   update() {
