@@ -9,11 +9,11 @@ function setup() {
   createCanvas(720, 400);
   // system = new ParticleSystem(createVector(width / 2, 50));
   g = createVector(0, 0.05);
-  wind = createVector(0.03, -0.01);
+  f = createVector(0, -0.01);
 }
 
 function draw() {
-  background(51);
+  background(0, 50);
 
   for (let s of systems) {
     s.addParticle();
