@@ -1,12 +1,11 @@
-// A simple Particle class
-
-class Particle {
+class Fire {
   constructor(position) {
       this.acceleration = createVector(0, 0);
       this.velocity = createVector(random(-1, 1), random(-1, 0));
       this.position = position.copy();
       this.lifespan = 255;
-      this.w = 2;
+      this.size = particleSize;
+      this.color = random(colors);
   }
 
   run() {
