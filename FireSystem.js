@@ -32,7 +32,7 @@ run() {
 
   applyGravity(g) {
     for(let p of this.particles){
-     this.applyGravity(g);
+     p.applyGravity(g);
     }
     for(let subsytem of this.subsytems){
       subsytem.applyGravity(g);
