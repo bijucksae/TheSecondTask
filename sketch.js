@@ -15,6 +15,10 @@ function setup() {
 function draw() {
   background(0, 50);
 
+  let mousePos = createVector(mouseX, mouseY);
+  let newSystem = new FireSystem(mousePos);
+  systems.push(newSystem);
+
   for (let s of systems) {
     s.addParticle();
     s.applyGravity(g);
