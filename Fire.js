@@ -6,6 +6,7 @@ class Fire {
       this.lifespan = 255;
       this.size = particleSize;
       this.color = random(colors);
+      this.blur = random(1,5);
   }
 
   run() {
