@@ -29,15 +29,13 @@ class Fire {
       this.velocity.add(this.acceleration);
       this.position.add(this.velocity);
       this.lifespan -= 2;
-
-      this.acceleration.set(0, 0);
+      this.acceleration.mult(0);
   }
 
   display() {
-      stroke(200, this.lifespan);
-      strokeWeight(2);
-      fill(127, this.lifespan);
-      ellipse(this.position.x, this.position.y, this.w, this.w);
+      fill(this.color.levels[0], this.color.levels[1], this.color.levels[2], this.lifespan);
+      noStroke();
+      ellipse(this.position.x, this.position.y, this.size + this.blur, this.size + this.blur);
   }
 
   isDead() {
