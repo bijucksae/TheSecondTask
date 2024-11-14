@@ -20,20 +20,27 @@ run() {
       let p = this.particles[i];
       p.update();
       p.display();
-      
+
       if (p.isDead()) {
         this.particles.splice(i, 1);
       }
     }
 
   applyGravity(g) {
-     this.applyForce(g);
+    for(let p of this.particles){
+     this.applyGravity(g);
+    }
+    for(let subsytem of this.subsytems){
+      subsytem.applyGravity(g);
+    }
   }
-  applyForce(force) {
-      for (let p of this.particles) {
-          p.applyForce(force);
-      }
-  }
-
+}
+  applyFriction(friction){
+    for(let p of this.particles){
+      p.applyFriction(f);
+    }
+    for(let subsytem of this.subsytems){
+      subsytem.applyFriction(f);
+    }
   }
 }
