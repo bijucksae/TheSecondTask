@@ -9,16 +9,11 @@ class Fire {
       this.blur = random(1,5);
   }
 
-  run() {
-      this.update();
-      this.display();
-  }
-
   applyForce(force) {
-      this.acceleration.add(force);
-  }
+    this.acceleration.add(force);
+}
 
-  applyGravity(gravity){
+applyGravity(gravity){
     this.acceleration.add(gravity);
   }
 
