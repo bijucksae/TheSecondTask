@@ -7,9 +7,12 @@ let colors = [];
 
 function setup() {
   createCanvas(720, 400);
-  // system = new ParticleSystem(createVector(width / 2, 50));
   g = createVector(0, 0.05);
   f = createVector(0, -0.01);
+
+  for (let i = 0; i < 5; i++) {
+    colors.push(color(random(150, 200), random(150, 230), random(250, 255), random(150, 200)));
+  }
 }
 
 function draw() {
