@@ -19,16 +19,14 @@ function draw() {
   let newSystem = new FireSystem(mousePos);
   systems.push(newSystem);
 
-  for (let s of systems) {
-    s.addParticle();
-    s.applyGravity(g);
-    s.applyForce(wind);
-    s.run();
+  for (let i = 0; i < systems.length; i++) {
+    systems[i].addParticle();
+    systems[i].applyGravity(g);
+    systems[i].applyFriction(f);
+    systems[i].run();
   }
-}
 
-function mouseClicked() {
-  let mPos = createVector(mouseX, mouseY);
-  let system = new ParticleSystem(mPos);
-  systems.push(system);
+  if(systems.length > 10){
+    systems.splice(0, 1);
+  }
 }
