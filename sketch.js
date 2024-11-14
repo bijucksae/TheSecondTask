@@ -1,7 +1,9 @@
-let system;
 let systems = [];
 let g; // gravity
-let wind;
+let f; // friction
+let maxParticles = 100;
+let particleSize = 5;
+let colors = [];
 
 function setup() {
   createCanvas(720, 400);
