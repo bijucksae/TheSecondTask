@@ -17,6 +17,14 @@ class Fire {
       this.acceleration.add(force);
   }
 
+  applyGravity(gravity){
+    this.acceleration.add(gravity);
+  }
+
+  applyFriction(friction);{
+    this.velocity.add(friction);
+  }
+
   update() {
       this.velocity.add(this.acceleration);
       this.position.add(this.velocity);
