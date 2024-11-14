@@ -1,0 +1,42 @@
+// 파티클 클래스
+class Particle {
+    constructor(position) {
+      this.position = position.copy(); 
+      this.velocity = createVector(random(-1, 1), random(-1, 0)); // 초기 속도 (위쪽으로 약간의 속도)
+      this.acceleration = createVector(0, 0);
+      this.lifespan = 255; 
+      this.size = particleSize;
+      this.color = random(colors); 
+      this.blur = random(1, 5); 
+    }
+  
+    applyForce(force) {
+      this.acceleration.add(force);
+    }
+  
+    applyGravity(gravity) {
+      this.acceleration.add(gravity);
+    }
+  
+    applyFriction(friction) {
+      this.velocity.add(friction);
+    }
+  
+    update() {
+      this.velocity.add(this.acceleration); 
+      this.position.add(this.velocity);
+      this.lifespan -= 2; 
+      this.acceleration.mult(0);
+    }
+  
+    display() {
+      fill(this.color.levels[0], this.color.levels[1], this.color.levels[2], this.lifespan);
+      noStroke();
+      ellipse(this.position.x, this.position.y, this.size + this.blur, this.size + this.blur);
+    }
+  
+    isDead() {
+      return this.lifespan < 0;
+    }
+  }
+  
